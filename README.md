@@ -6,6 +6,7 @@
 
 pipeline.py
 爬取结果将在指令目录下生成一个tencent.json的文件
+
 def __init__(self):
     self.f = open('tencent.json', 'w', encoding='utf-8')
 
@@ -15,6 +16,7 @@ def process_item(self, item, spider):
     return item
     
 tencent.json
+
 {"title": "SA-腾讯社交广告商业化产品经理（产品形态设计方向 深圳）", "url": "position_detail.php?id=34993&keywords=&tid=0&lid=0", "category": "产品/项目类", "num": "1", "area": "深圳", "time": "2018-01-15"}, 
 {"title": "16175-海外游戏运营经理（深圳）", "url": "position_detail.php?id=36047&keywords=&tid=0&lid=0", "category": "产品/项目类", "num": "1", "area": "深圳", "time": "2018-01-15"}, 
 {"title": "15605-火影忍者3D角色(深圳)", "url": "position_detail.php?id=35302&keywords=&tid=0&lid=0", "category": "设计类", "num": "1", "area": "深圳", "time": "2018-01-15"}, 
@@ -33,7 +35,9 @@ tencent.json
 {"title": "TEG01-WEB开发工程师（深圳）", "url": "position_detail.php?id=36037&keywords=&tid=0&lid=0", "category": "技术类", "num": "2", "area": "深圳", "time": "2018-01-15"}
 
 tencent.py
+
 自动识别下一页的属性状态，判断是否为最后一页
+
 def parse(self, response):
     node_list = response.xpath("//tr[@class='odd' or @class='even']")
     for index, node in enumerate(node_list):
