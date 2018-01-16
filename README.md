@@ -43,15 +43,22 @@ tencent.py
 
 def parse(self, response):
 
-    node_list = response.xpath("//tr[@class='odd' or @class='even']")    
-    for index, node in enumerate(node_list):    
+    node_list = response.xpath("//tr[@class='odd' or @class='even']")  
+    
+    for index, node in enumerate(node_list):  
+    
         items = TencentItem()                
-        title = node.xpath("./td[1]/a/text()").extract()[0]                
-        url = node.xpath("./td[1]/a/@href").extract()[0]              
+        
+        title = node.xpath("./td[1]/a/text()").extract()[0]          
+        
+        url = node.xpath("./td[1]/a/@href").extract()[0]        
+        
         if len(node.xpath("./td[2]/text()")):                
+        
             category = node.xpath("./td[2]/text()").extract()[0]
-        else:
-            category = ""
+            
+        else:        
+            category = ""          
         num = node.xpath("./td[3]/text()").extract()[0]
         area = node.xpath("./td[4]/text()").extract()[0]
         time = node.xpath("./td[5]/text()").extract()[0]
