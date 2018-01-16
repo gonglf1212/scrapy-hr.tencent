@@ -42,6 +42,7 @@ tencent.py
 自动识别下一页的属性状态，判断是否为最后一页
 
 def parse(self, response):
+
     node_list = response.xpath("//tr[@class='odd' or @class='even']")    
     for index, node in enumerate(node_list):    
         items = TencentItem()                
